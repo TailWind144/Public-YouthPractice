@@ -4,6 +4,11 @@ import { ArcoResolver } from "unplugin-vue-components/resolvers"
 import { vitePluginForArco } from "@arco-plugins/vite-vue"
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      homeBase: "/practice/list",
+    },
+  },
   devtools: { enabled: false },
   compatibilityDate: "2024-11-01",
   app: {

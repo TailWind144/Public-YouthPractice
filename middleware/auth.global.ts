@@ -1,7 +1,8 @@
 import type { User } from "~/types/user"
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
-  if (to.path === "/") return navigateTo("/learn")
+  const config = useRuntimeConfig()
+  if (to.path === "/") return navigateTo(config.public.homeBase)
   if (to.path === "/login") return
   const userState = useState<User>("userState")
   if (!userState.value) {

@@ -1,14 +1,14 @@
 <template>
   <div class="sticky top-0 z-50 w-full">
     <div
-      class="flex items-center sm:px-12 sm:py-8 py-4 transition-all duration-500 ease-in-out"
+      class="flex items-center sm:px-12 sm:py-8 p-4 transition-all duration-500 ease-in-out gap-2"
     >
       <MainHeader
         :icon="IconLeft"
         :subtitle="time"
         :backCb="
           () =>
-            historyRef!.length !== 1 ? $router.back() : navigateTo('/learn')
+            historyRef!.length !== 1 ? $router.back() : navigateTo(config.public.homeBase)
         "
       />
       <TooltipIconButton
@@ -28,6 +28,7 @@ import { IconLeft } from "@arco-design/web-vue/es/icon"
 const { time } = defineProps(["time"])
 const historyRef = ref(import.meta.client ? history : null)
 
+const config = useRuntimeConfig()
 const emit = defineEmits(["showListModal"])
 const handleClick = () => {
   emit("showListModal")

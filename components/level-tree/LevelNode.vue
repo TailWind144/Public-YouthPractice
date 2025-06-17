@@ -1,7 +1,7 @@
 <template>
   <div class="level-node relative">
     <div
-      class="tail absolute top-0 left-5 w-[1px] pt-11 pb-1 h-full z-0"
+      class="tail absolute top-0 left-5 w-[0px] pt-11 pb-1 h-full z-0"
       :class="{
         'cursor-not-allowed': data.disable,
         'cursor-pointer': !data.disable,
@@ -59,7 +59,7 @@ const { data, index } = defineProps(["data", "index"])
 .level-node:not(:last-child) .tail::after {
   content: "";
   display: block;
-  width: 100%;
+  width: 1px;
   height: 100%;
   background-color: var(--bg-info-color);
 }

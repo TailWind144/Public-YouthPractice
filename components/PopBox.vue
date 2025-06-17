@@ -1,5 +1,5 @@
 <template>
-  <div class="w-[40vw] h-[50vh] px-4 py-2 flex flex-col gap-4">
+  <div class="w-[90vw] sm:w-[40vw] h-[50vh] px-4 py-2 flex flex-col gap-4">
     <div class="text-lg text-[var(--text-primary)]">历史记录</div>
     <a-table
       :data="data"

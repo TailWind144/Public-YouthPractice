@@ -67,7 +67,7 @@ async function queryOptions(con: any, id: any, stem: string, types: any[]) {
   } = {
     stem,
     multiples: [],
-    kind: "options",
+    kind: rows[0].question ? "selectOptions" : "options",
     types: types[0],
   }
   for (const row of rows) {

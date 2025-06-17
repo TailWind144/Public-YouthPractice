@@ -32,13 +32,16 @@
 <script setup lang="ts">
 definePageMeta({
   validate: async (route) => {
-    return typeof route.query.id === "string" && /^\d+$/.test(route.query.id)
+    return (
+      typeof route.query.level === "string" && /^\d+$/.test(route.query.level)
+    )
   },
 })
 import Stem from "~/components/questions/Stem.vue"
 import Multiples from "~/components/questions/Multiples.vue"
 import Box from "~/components/questions/Box.vue"
 import Matching from "~/components/questions/Matching.vue"
+import SelectOptions from "~/components/questions/SelectOptions.vue"
 import { Modal } from "@arco-design/web-vue"
 import Congratulation from "~/components/questions/Congratulation.vue"
 import { checkAns, getContent, getDetail, getHistory } from "./utils/fetch"
@@ -49,6 +52,7 @@ const answerArea = {
   options: Multiples,
   box: Box,
   matching: Matching,
+  selectOptions: SelectOptions,
 }
 const loading = ref(false)
 const id = ref<string>()
@@ -70,7 +74,7 @@ const visible = ref(false)
 let unitId = null
 
 const initHistory = async () => {
-  const levelId = route.query.id
+  const levelId = route.query.level
   const uid = userState.value.uid
   const { data } = await getHistory({ uid, levelId })
   historys.value = data
@@ -95,7 +99,7 @@ const initDetail = async (userLevelId) => {
 }
 
 const initData = async () => {
-  id.value = route.query.id as string
+  id.value = route.query.level as string
   const { data } = await getContent({ id: id.value })
   unitId = data.types.unitId
   types.value = `${data.types.unit} - ${data.types.module}(${data.types.index})`

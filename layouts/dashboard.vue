@@ -1,7 +1,7 @@
 <template>
   <div class="home min-h-screen bg-[var(--bg-color)]">
     <TopNav></TopNav>
-    <div class="max-w-[90em] flex gap-4 p-4 mx-auto">
+    <div class="max-w-[90em] lg:flex lg:gap-4 p-4 mx-auto relative">
       <div class="flex-[3]">
         <slot />
       </div>
@@ -10,6 +10,9 @@
           <Calendar />
           <DailySentence />
         </div>
+      </div>
+      <div class="fixed block lg:hidden bottom-12 right-2">
+        <PopMenu />
       </div>
     </div>
   </div>

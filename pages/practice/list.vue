@@ -11,7 +11,10 @@
           <a-skeleton-line :rows="1" :line-height="45" />
         </a-skeleton>
       </div>
-      <div class="grid grid-cols-normal gap-2" v-else>
+      <div
+        class="overflow-x-auto flex sm:grid sm:grid-cols-normal gap-2 py-2"
+        v-else
+      >
         <PracticeCard
           @click="handleCardClick(item.id)"
           v-for="(item, index) in modules"
@@ -81,7 +84,7 @@ const handleCardClick = async (id) => {
 const handleItemClick = (id) => {
   return navigateTo({
     path: "/practice/level",
-    query: { module: curId.value, id },
+    query: { module: curId.value, unit: id },
   })
 }
 </script>

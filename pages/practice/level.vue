@@ -15,8 +15,8 @@ definePageMeta({
     return (
       typeof route.query.module === "string" &&
       /^\d+$/.test(route.query.module) &&
-      typeof route.query.id === "string" &&
-      /^\d+$/.test(route.query.id)
+      typeof route.query.unit === "string" &&
+      /^\d+$/.test(route.query.unit)
     )
   },
 })
@@ -29,7 +29,7 @@ const types = ref([])
 let module
 const initData = async () => {
   module = route.query.module
-  const id = route.query.id
+  const id = route.query.unit
   const { data } = await getLevels({ id })
 
   levels.value = data.arr
@@ -38,7 +38,10 @@ const initData = async () => {
 initData()
 
 const handleClick = (id) => {
-  return navigateTo({ path: "/questions", query: { id } })
+  return navigateTo({
+    path: "/questions",
+    query: { ...route.query, level: id },
+  })
 }
 
 const { arrivedState } = useWindowScroll()

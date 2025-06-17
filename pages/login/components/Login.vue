@@ -39,8 +39,10 @@
           shape="round"
           long
           size="large"
-          >登录</a-button
+          :loading="loading"
         >
+          登录
+        </a-button>
       </a-form-item>
     </a-form>
   </div>
@@ -75,7 +77,10 @@ const rules = {
   ],
 }
 
+const loading = ref(false)
+const config = useRuntimeConfig()
 const handleSubmit = async (values) => {
+  loading.value = true
   const { username, password } = values
   const res = await login({ username, password })
   if (res.status === 200) {
@@ -88,8 +93,9 @@ const handleSubmit = async (values) => {
       level,
     }))
     formRef.value.resetFields()
-    await navigateTo("/learn", { replace: true })
+    navigateTo(config.public.homeBase)
   }
+  loading.value = false
 }
 </script>
 

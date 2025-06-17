@@ -32,6 +32,14 @@
                 >{{ index + 1 }}.
               </span>
               {{ item.en }}
+              <Tag
+                size="small"
+                :color="
+                  item.stage === 1 ? 'red' : item.stage === 2 ? 'orange' : ''
+                "
+              >
+                {{ item.stage === 1 ? "中考" : item.stage === 2 ? "高考" : "" }}
+              </Tag>
             </div>
             <div class="flex-1">
               {{ item.cn }}
@@ -51,6 +59,7 @@
 </template>
 
 <script setup lang="ts">
+import { Tag } from "@arco-design/web-vue"
 const { list, loading } = defineProps(["list", "loading"])
 
 const showList = computed(() => {

@@ -1,10 +1,17 @@
 <template>
-  <div>
+  <div class="shadow-down">
     <MediaNav :type @changeType="handleChange" />
     <div
+      v-if="list?.length"
       class="bg-[var(--bg-color-d)] h-[80vh] rounded-b-xl p-4 overflow-y-auto"
     >
       <MediaList :list @handleClick="handleClick" />
+    </div>
+    <div
+      v-else
+      class="bg-[var(--bg-color-d)] h-[80vh] rounded-b-xl p-4 overflow-y-auto flex items-center"
+    >
+      <a-empty />
     </div>
   </div>
 </template>

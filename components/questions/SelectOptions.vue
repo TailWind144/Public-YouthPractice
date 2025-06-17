@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="flex-col flex gap-2 flex-1">
-        <div class="flex items-center">
+        <div class="flex mt-2 mb-4">
           <span class="no question-title">{{ curIndex + 1 }}. </span>
           <span class="question-title">{{ data[curIndex]?.question }}</span>
         </div>
@@ -118,9 +118,9 @@ watch(
 )
 
 const isSuccess = (index, checked = true) =>
-  checked && isFinish && checkAnswersArr[index].isCorrect
+  checked && isFinish && checkAnswersArr[index]?.isCorrect
 const isError = (index, checked = true) =>
-  checked && isFinish && !checkAnswersArr[index].isCorrect
+  checked && isFinish && !checkAnswersArr[index]?.isCorrect
 </script>
 
 <style scoped>

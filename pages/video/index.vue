@@ -29,7 +29,7 @@
         </a-spin>
       </div>
       <div class="text-base lg:w-[355px]">
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col-reverse lg:flex-col gap-4">
           <VideoWordSideList :loading="wordsListLoading" :list="wordsList" />
           <VideoSideList
             :list="videoList"

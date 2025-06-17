@@ -123,6 +123,12 @@ html.dark {
   font-size: 1rem !important;
 }
 .arco-page-header {
+  padding: 14px 0 !important;
+}
+.arco-page-header-back-btn {
+  font-size: 1rem !important;
+}
+.arco-page-header-wrapper {
   padding: 0 !important;
 }
 .user-menu .arco-menu-inline .arco-menu-inline-header {
@@ -146,6 +152,10 @@ html.dark {
   @media (min-width: 640px) {
     width: auto !important;
   }
+}
+
+.youth-pop-menu.arco-menu .arco-menu-item .arco-menu-icon {
+  margin-right: 0;
 }
 
 /* .page-enter-active,

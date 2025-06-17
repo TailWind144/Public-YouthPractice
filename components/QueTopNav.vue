@@ -2,11 +2,22 @@
   <div :class="(isTop ? '' : 'border-b') + ' sticky top-0 z-50'">
     <div
       :class="
-        (isTop ? 'sm:px-12 sm:py-8' : 'backdrop-blur backdrop-saturate-50') +
-        ' flex items-center px-8 py-4 transition-all duration-500 ease-in-out'
+        (isTop ? 'sm:px-12 sm:py-5' : 'backdrop-blur backdrop-saturate-50') +
+        ' flex items-center px-4 sm:px-10 transition-all duration-500 ease-in-out'
       "
     >
-      <MainHeader class="mr-auto" :icon="IconLeft" :backCb="$router.back" />
+      <MainHeader
+        :title="''"
+        class="mr-auto"
+        :icon="IconLeft"
+        :backCb="
+          () =>
+            navigateTo({
+              path: '/practice/level',
+              query: { module: $route.query.module, unit: $route.query.unit },
+            })
+        "
+      />
       <transition appear name="slide-up">
         <Countdown
           v-if="!isFinish"
@@ -21,10 +32,10 @@
           <span class="text-[var(--text-primary)]">{{ score }}</span> 分
         </div>
       </transition>
-      <div class="flex gap-8">
+      <div class="flex gap-4 sm:gap-8">
         <Redo v-show="isFinish" />
         <History :data="historys" />
-        <UserAvatar class="mr-24" />
+        <UserAvatar class="hidden sm:block lg:mr-24" />
       </div>
     </div>
     <ScrollTop />

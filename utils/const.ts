@@ -6,7 +6,7 @@ import {
 } from "@arco-design/web-vue/es/icon"
 
 export const keyToMenuNames = {
-  "/learn": { path: "/learn", name: "学习" },
+  // "/learn": { path: "/learn", name: "学习" },
   // "/tasks": { path: "/tasks", name: "任务" },
   "/practice": {
     path: "/practice/list",

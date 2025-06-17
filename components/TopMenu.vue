@@ -2,7 +2,7 @@
   <div class="w-full menu">
     <a-menu
       v-model:selectedKeys="selectedKeys"
-      mode="horizontal"
+      :mode
       @menu-item-click="handleClick"
     >
       <a-menu-item v-for="(obj, key) in keyToMenuNames" :key="key">
@@ -12,6 +12,8 @@
   </div>
 </template>
 <script setup lang="ts">
+const { mode } = defineProps(["mode"])
+
 const route = useRoute()
 const emit = defineEmits(["menuClick"])
 const selectedKeys = ref<any>([])
@@ -20,6 +22,7 @@ watchEffect(() => {
 })
 const handleClick = (key) => {
   navigateTo(keyToMenuNames[key].path)
+  emit("menuClick")
 }
 </script>
 <style scoped>

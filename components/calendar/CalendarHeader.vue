@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between items-center flex-col-reverse gap-2 xl:flex-row mb-4"
+    class="flex justify-between items-center flex-col-reverse gap-2 xl:flex-row mb-2 xl:mb-4"
   >
     <div class="flex w-full items-center justify-between gap-2 flex-1">
       <button
