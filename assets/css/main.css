@@ -75,9 +75,6 @@ html.dark {
   font-size: 1rem;
   font-family: Inter !important;
 }
-.question span.question-title {
-  font-size: 1.125rem;
-}
 .question p {
   text-align: justify;
   margin-top: 0.5em;
@@ -112,6 +109,9 @@ html.dark {
   font-style: italic;
 }
 
+.arco-spin {
+  width: 100%;
+}
 .answer-header .arco-collapse-item-header {
   color: var(--text-p);
   font-size: 16px;
@@ -151,6 +151,15 @@ html.dark {
   width: 100% !important;
   @media (min-width: 640px) {
     width: auto !important;
+  }
+}
+
+.arco-modal-container .arco-modal:not(.arco-modal-fullscreen) {
+  width: auto;
+}
+@media (min-width: 640px) {
+  .arco-modal-container .arco-modal:not(.arco-modal-fullscreen) {
+    width: 520px;
   }
 }
 

@@ -92,10 +92,8 @@ const handleSubmit = async (values) => {
       experience,
       level,
     }))
-    formRef.value.resetFields()
     navigateTo(config.public.homeBase)
   }
-  loading.value = false
 }
 </script>
 

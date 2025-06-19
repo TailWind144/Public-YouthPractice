@@ -13,7 +13,7 @@
         </span>
       </span>
     </div>
-    <div class="grid grid-cols-5 gap-4 text-base">
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 text-base">
       <div
         class="flex items-center gap-2"
         v-for="(item, index) in answers"
