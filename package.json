@@ -1,0 +1,39 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.2.0",
+    "@vueuse/core": "^13.1.0",
+    "@vueuse/nuxt": "^13.1.0",
+    "base64url": "^3.0.1",
+    "canvas-confetti": "^1.9.3",
+    "dayjs": "^1.11.13",
+    "gsap": "^3.12.7",
+    "ioredis": "^5.8.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "md5": "^2.3.0",
+    "mitt": "^3.0.1",
+    "mysql2": "^3.14.0",
+    "nuxt": "^3.16.2",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@arco-design/web-vue": "^2.57.0",
+    "@arco-plugins/vite-vue": "^1.4.5",
+    "@nuxtjs/tailwindcss": "^6.13.2",
+    "@types/md5": "^2.3.5",
+    "unplugin-auto-import": "^19.1.2",
+    "unplugin-vue-components": "^28.4.1"
+  },
+  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
+}
