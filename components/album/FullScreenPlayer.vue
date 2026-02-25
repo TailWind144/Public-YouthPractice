@@ -67,7 +67,7 @@
 import MusicInputRange from "./MusicInputRange.vue"
 import MusicControl from "./MusicControl.vue"
 import IconWrapper from "./IconWrapper.vue"
-import { getDarkBackgroundFromImage } from "~/utils/imageColorAnalyzer"
+import { getDarkBackgroundFromImage } from "~/utils/image-color-analyzer"
 import { getAlbumLyrics } from "~/pages/album/utils/fetch"
 import Lyrics from "./Lyrics.vue"
 
@@ -98,7 +98,7 @@ watch(
         const imageUrl = `${ossBaseURL}${newCover}`
         const backgroundColor = await getDarkBackgroundFromImage(
           imageUrl,
-          false
+          false,
         )
         dynamicBackgroundColor.value = backgroundColor
       } catch (error) {
@@ -111,7 +111,7 @@ watch(
       dynamicBackgroundColor.value = "rgb(15, 23, 42)"
     }
   },
-  { immediate: true }
+  { immediate: true },
 )
 
 const handlePrevious = () => {
@@ -177,7 +177,7 @@ watch(
     if (newIndex !== currentLyricIndex.value) {
       currentLyricIndex.value = newIndex
     }
-  }
+  },
 )
 
 const isChinese = ref(false)
